@@ -126,7 +126,7 @@
     <nav class="menu" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#cursos">Cursos</a>
-      <a href="#ctrlg">CTRL.G</a>
+      <a href="/ctrlg/">CTRL.G</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -229,7 +229,7 @@
     <ul>
       <li><a class="puerta" href="#servicios"><span class="puerta__num">01</span><span class="puerta__titulo">Servicios</span><span class="puerta__texto">Consultoría para campañas, gobiernos y organizaciones. <em>Conocé cómo trabajo.</em></span></a></li>
       <li><a class="puerta" href="#cursos"><span class="puerta__num">02</span><span class="puerta__titulo"><em>Cursos</em></span><span class="puerta__texto">Estrategia, crisis y Meta Ads. <em>Para equipos, candidaturas y organizaciones.</em></span></a></li>
-      <li><a class="puerta" href="#ctrlg"><span class="puerta__num">03</span><span class="puerta__titulo">CTRL.G</span><span class="puerta__texto">Textos, notas y apuntes. <em>Pienso en voz alta.</em></span></a></li>
+      <li><a class="puerta" href="/ctrlg/"><span class="puerta__num">03</span><span class="puerta__titulo">CTRL.G</span><span class="puerta__texto">Textos, notas y apuntes. <em>Pienso en voz alta.</em></span></a></li>
     </ul>
   </nav>
 
@@ -354,7 +354,9 @@
         </h2>
         <p class="ctrlg__lema">pienso en voz alta</p>
       </div>
-      <p class="ctrlg__vacio">Las primeras entradas están en camino. Mientras tanto, seguime en <a href="https://instagram.com/giulianazocco">Instagram</a>.</p>
+      {% set lista = collections.ctrlg | primeros(3) %}
+      {% include "lista-entradas.njk" %}
+      {% if collections.ctrlg.length > 3 %}<a class="link-texto" style="align-self:flex-start" href="/ctrlg/">Todas las entradas →</a>{% endif %}
     </div>
   </section>
 
@@ -380,6 +382,7 @@
         <a href="https://instagram.com/rete.italia.argentina">Rete Italia</a>
         <a href="https://instagram.com/asacop.arg">ASACOP</a>
         <a href="/sobre-mi/">Sobre mí</a>
+        <a href="/ctrlg/">CTRL.G</a>
       </div>
     </div>
     <div class="pie__base">

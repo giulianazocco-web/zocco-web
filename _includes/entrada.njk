@@ -1,0 +1,65 @@
+{%- set url = "https://zocco.ar" + page.url -%}
+{%- set bajada = description or "" -%}
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · CTRL.G · Giuliana Zocco</title>
+<meta name="description" content="{{ bajada }}">
+<link rel="canonical" href="{{ url }}">
+<meta name="author" content="Giuliana Zocco">
+<meta name="theme-color" content="#17130F">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Zocco · comunicación política">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ bajada }}">
+<meta property="og:url" content="{{ url }}">
+<meta property="og:image" content="https://zocco.ar{{ image or '/assets/img/og-zocco.jpg' }}">
+<meta property="article:published_time" content="{{ page.date | iso }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@licintensa">
+<link rel="preload" href="/assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | json | safe }},
+  "description": {{ bajada | json | safe }},
+  "datePublished": "{{ page.date | iso }}",
+  "inLanguage": "es-AR",
+  "url": "{{ url }}",
+  "mainEntityOfPage": "{{ url }}",
+  "image": "https://zocco.ar{{ image or '/assets/img/og-zocco.jpg' }}",
+  "author": { "@type": "Person", "@id": "https://zocco.ar/#giuliana", "name": "Giuliana Zocco", "url": "https://zocco.ar/" },
+  "publisher": { "@type": "Person", "@id": "https://zocco.ar/#giuliana", "name": "Giuliana Zocco" },
+  "isPartOf": { "@type": "Blog", "name": "CTRL.G · pienso en voz alta", "url": "https://zocco.ar/ctrlg/" }
+}
+</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+{% include "cabecera.njk" %}
+<main id="contenido">
+  <article class="contenedor entrada">
+    <p class="antetitulo"><a href="/ctrlg/">CTRL.G</a> · <time datetime="{{ page.date | iso }}">{{ page.date | fecha }}</time> · {{ content | minutos }} min de lectura</p>
+    <h1>{{ title }}</h1>
+    {% if bajada %}<p class="entrada__bajada">{{ bajada }}</p>{% endif %}
+    {% if image %}<img class="entrada__imagen" src="{{ image }}" alt="{{ image_alt or title }}">{% endif %}
+    <div class="entrada__cuerpo">
+{{ content | safe }}
+    </div>
+    <footer class="entrada__pie">
+      <p>Escrito por <a href="/sobre-mi/">Giuliana Zocco</a>, consultora en comunicación política.</p>
+      <p><a href="/ctrlg/">← Todas las entradas</a></p>
+    </footer>
+  </article>
+</main>
+{% include "pie.njk" %}
+</body>
+</html>

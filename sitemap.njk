@@ -1,0 +1,14 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://zocco.ar/</loc></url>
+  <url><loc>https://zocco.ar/sobre-mi/</loc></url>
+  <url><loc>https://zocco.ar/cursos/estrategia-digital/</loc></url>
+  <url><loc>https://zocco.ar/ctrlg/</loc></url>
+{%- for e in collections.ctrlg %}
+  <url><loc>https://zocco.ar{{ e.url }}</loc><lastmod>{{ e.date | iso }}</lastmod></url>
+{%- endfor %}
+</urlset>

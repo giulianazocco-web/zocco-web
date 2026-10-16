@@ -1,0 +1,53 @@
+---
+permalink: /ctrlg/
+---
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTRL.G · pienso en voz alta · Giuliana Zocco</title>
+<meta name="description" content="CTRL.G: textos, notas y apuntes de Giuliana Zocco sobre comunicación política, estrategia digital, campañas y asuntos públicos.">
+<link rel="canonical" href="https://zocco.ar/ctrlg/">
+<meta name="author" content="Giuliana Zocco">
+<meta name="theme-color" content="#17130F">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="CTRL.G · pienso en voz alta">
+<meta property="og:description" content="Textos, notas y apuntes de Giuliana Zocco sobre comunicación política.">
+<meta property="og:url" content="https://zocco.ar/ctrlg/">
+<meta property="og:image" content="https://zocco.ar/assets/img/og-zocco.jpg">
+<link rel="preload" href="/assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "CTRL.G · pienso en voz alta",
+  "url": "https://zocco.ar/ctrlg/",
+  "inLanguage": "es-AR",
+  "author": { "@type": "Person", "@id": "https://zocco.ar/#giuliana", "name": "Giuliana Zocco", "url": "https://zocco.ar/" }
+}
+</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+{% include "cabecera.njk" %}
+<main id="contenido" class="ctrlg">
+  <div class="contenedor seccion">
+    <div>
+      <h1 class="teclas" aria-label="CTRL.G">
+        <span class="tecla" aria-hidden="true">CTRL</span><span class="teclas__punto" aria-hidden="true">.</span><span class="tecla tecla--g" aria-hidden="true">G</span>
+      </h1>
+      <p class="ctrlg__lema">pienso en voz alta</p>
+    </div>
+    {% set lista = collections.ctrlg %}
+    {% include "lista-entradas.njk" %}
+  </div>
+</main>
+{% include "pie.njk" %}
+</body>
+</html>

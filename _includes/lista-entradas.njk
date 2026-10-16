@@ -1,0 +1,16 @@
+{% if lista and lista.length %}
+<ul class="entradas">
+  {% for e in lista %}
+  <li><a href="{{ e.url }}">
+    <time class="entradas__fecha" datetime="{{ e.date | iso }}">{{ e.date | fecha }}</time>
+    <span class="entradas__texto">
+      <span class="entradas__titulo">{{ e.data.title }}</span>
+      {% if e.data.description %}<span class="entradas__bajada">{{ e.data.description }}</span>{% endif %}
+    </span>
+    <span class="entradas__min">{{ e.content | minutos }} min</span>
+  </a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="ctrlg__vacio">Las primeras entradas están en camino. Mientras tanto, seguime en <a href="https://instagram.com/giulianazocco">Instagram</a>.</p>
+{% endif %}
